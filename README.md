@@ -44,3 +44,6 @@ const result = arr.filter(item => !item.a);
 
 console.log(result); // [ { a: false, b: '789' } ]
 ```
+
+## 2. 配置代理
+**[配置代理]()**
