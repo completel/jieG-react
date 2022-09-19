@@ -46,4 +46,4 @@ console.log(result); // [ { a: false, b: '789' } ]
 ```
 
 ## 2. 配置代理
-**[配置代理]()**
+**[配置代理](https://github.com/completel/jieG-react/blob/master/markdown/react%E8%84%9A%E6%89%8B%E6%9E%B6%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.md)**
