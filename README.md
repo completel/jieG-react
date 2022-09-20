@@ -47,3 +47,28 @@ console.log(result); // [ { a: false, b: '789' } ]
 
 ## 2. 配置代理
 **[配置代理](https://github.com/completel/jieG-react/blob/master/markdown/react%E8%84%9A%E6%89%8B%E6%9E%B6%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.md)**
+
+
+## 3. github搜索案例相关知识点
+1. 设计状态时要考虑全面，例如带有网络请求的组件，要考虑请求失败怎么办。
+2. ES6小知识点：解构赋值+重命名
+    ``` js
+    let obj = {a: {b: 1}};
+    const {a} = obj; // 传统解构赋值
+    const {a: {b}} = obj; // 连续解构赋值
+    const {a: {b: value}} = obj; // 连续解构赋值+重命名
+    ```
+3. 消息订阅和发布机制
+    - 先订阅，再发布（理解：有一种隔空对话的感觉）
+    - 适用于任意组件间通信
+    - 要在组件的`componentWillUnmount`中取消订阅
+4. fetch发送请求（关注分离的设计思想）
+    ``` js
+    try {
+        const response = await fetch(`https://api.github.com/search/users?q=${keywords}`);
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('请求出错', error);
+    }
+```
