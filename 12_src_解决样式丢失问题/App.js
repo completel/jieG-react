@@ -22,18 +22,18 @@ export default class App extends Component {
                             {/* <a className="list-group-item active" href="./about.html">About</a>
                             <a className="list-group-item" href="./home.html">Home</a> */}
 
-                            {/* 在React中靠路由链接实现切换组件 --- 编写路由链接*/}
-                            <MyNavLink to="/about">About</MyNavLink>
-                            <MyNavLink to="/home">Home</MyNavLink>
+                            {/* 在React中靠路由链接实现切换组件 */}
+                            <MyNavLink to="/hello/about">About</MyNavLink>
+                            <MyNavLink to="/hello/home">Home</MyNavLink>
                         </div>
                     </div>
                     <div className="col-xs-6">
                         <div className="panel">
                             <div className="panel-body">
-                                {/* 注册路由  exact={true} 严格匹配 */}
+                                {/* 注册路由 */}
                                 <Switch>
-                                    <Route exact={true} path='/about' component={About} />
-                                    <Route exact={true} path='/home' component={Home} />
+                                    <Route path='/hello/about' component={About} />
+                                    <Route path='/hello/home' component={Home} />
                                 </Switch>
                             </div>
                         </div>

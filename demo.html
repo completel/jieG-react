@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        ul,
+        ol {
+            list-style-type: none;
+        }
+
+        .nav {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        .nav .nav_1 {
+            float: left;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .nav ol {
+            display: none;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li class="nav_1">
+            <a href="javascrip:;">html</a>
+            <ol>
+                <li>div</li>
+                <li>span</li>
+                <li>a</li>
+            </ol>
+        </li>
+        <li class="nav_1">
+            <a href="javascrip:;">css</a>
+            <ol>
+                <li>background</li>
+                <li>display</li>
+                <li>position</li>
+            </ol>
+        </li>
+        <li class="nav_1">
+            <a href="javascrip:;">html</a>
+            <ol>
+                <li>for...</li>
+                <li>forEach</li>
+                <li>map</li>
+            </ol>
+        </li>
+    </ul>
+
+
+    <script>
+
+        const nav = document.querySelector('.nav');
+        const li = nav.children;
+        console.log(li);
+        for (let i = 0; i < li.length; i++) {
+            li[i].onmouseover = function () {
+                this.children[1].style.display = 'block';
+            }
+            li[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
