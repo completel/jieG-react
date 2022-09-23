@@ -159,3 +159,11 @@ console.log(result); // [ { a: false, b: '789' } ]
     > 注册路由(生命接受)：\<Route path='/demo/test component={Test} />  
     > 接收参数：this.props.location.state
     > 备注：刷新也可以保留住参数
+
+## 13. 编程式路由导航
+**借助`this.props.history`对象上的API对操作路由跳转、前进、后退**  
+> -this.props.history.push()  
+> -this.props.history.replace()  
+> -this.props.history.goBack()  
+> -this.props.history.goForward()  
+> -this.props.history.go()  

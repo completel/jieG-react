@@ -16,6 +16,7 @@ export default class Detail extends Component {
         // 接受search参数
         // const { search } = this.props.location;
         // const { id, title } = QueryString.parse(search);
+        // console.log(id, title);
 
         // 接受state参数
         const { id, title } = this.props.location.state || {};
