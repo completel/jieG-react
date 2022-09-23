@@ -9,7 +9,7 @@ const DetailData = [
 ]
 export default class Detail extends Component {
     render() {
-        console.log('Detail', this.props);
+        console.log(this.props);
         // 接受params参数
         // const { id, title } = this.props.match.params;
 
