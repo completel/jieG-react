@@ -128,3 +128,34 @@ console.log(result); // [ { a: false, b: '789' } ]
 1. 默认使用的时模糊匹配（简单记：【输入的路径】必须包含要【匹配的路径】，且顺序要一致）
 2. 开启严格匹配：\<Route exact={true} path="/about/" component={About} />
 3. 严格匹配不要随便开启，需要再开，有些时候开启会导致无法继续匹配二级路由
+
+## 10. Redirect的使用
+1. 一般写在所有路由注册的最下方，当所有路由都无法匹配时，跳转到Redirect指定的路由
+2. 具体编码：
+``` jsx
+<Switch>
+    <Route path='/about' component={About} />
+    <Route path='/home' component={Home} />
+    <Redirect to='/about' />
+</Switch>
+```
+
+## 11. 嵌套路由
+1. 注册子路由时要写上父路由的path值
+2. 路由的匹配是按照注册路由的顺序进行的
+
+## 12. 向路由组件传递参数
+1. params参数
+    > 路由链接(携带参数)：\<Link to='/demo/test/tom/18'>详情\</Link>  
+    > 注册路由(生命接受)：\<Route path='/demo/test/:name/:age' component={Test} />  
+    > 接收参数：const {id, title} = this.props.match.params
+2. search参数
+    > 路由链接(携带参数)：\<Link to='/demo/test?name=tom&age=18'>详情\</Link>  
+    > 注册路由(生命接受)：\<Route path='/demo/test component={Test} />  
+    > 接收参数：this.props.location.search
+    > 备注：获取到的search是urlencoded编码字符串，需要借助`query-string`解析
+3. state参数
+    > 路由链接(携带参数)：\<Link to={{pathname: '/demo/test', state: {name: 'tom', age: 18}}}>详情\</Link>  
+    > 注册路由(生命接受)：\<Route path='/demo/test component={Test} />  
+    > 接收参数：this.props.location.state
+    > 备注：刷新也可以保留住参数
