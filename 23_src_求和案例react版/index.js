@@ -4,16 +4,9 @@
 import ReactDOM from "react-dom/client";
 // 引入App组件
 import App from "./App";
-import store from "./redux/store";
 
 // 渲染App到页面
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <App />
 );
-
-store.subscribe(() => {
-    root.render(
-        <App />
-    );
-})
