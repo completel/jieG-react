@@ -193,8 +193,9 @@ console.log(result); // [ { a: false, b: '789' } ]
         "build": "craco build",
         "test": "craco test",
         "eject": "react-scripts eject"
-  },
+    },
     ```
+
 3. 然后在项目根目录创建一个 `craco.config.js` 用于修改默认配置。
     ``` js
         // 配置具体的修改规则
