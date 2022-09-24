@@ -179,3 +179,40 @@ console.log(result); // [ { a: false, b: '789' } ]
     - `BrowserRouter`没有任何影响，因为state保存在history对象中。
     - `HashRouter`刷新后会导致路由state参数的丢失!!!!!!!
 4. 备注：`HashRouter`可以用于解决一些路径错误相关的问题。
+
+## 15. antd的按需引入+自定主题
+1. 安装依赖：
+    > npm install @craco/craco@5
+    > npm install craco-less --force
+    > 在APP.js中添加：import 'antd/dist/antd.less'
+
+2. 修改package.json
+    ``` json
+        "scripts": {
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
+        "eject": "react-scripts eject"
+  },
+    ```
+3. 然后在项目根目录创建一个 `craco.config.js` 用于修改默认配置。
+    ``` js
+        // 配置具体的修改规则
+        const CracoLessPlugin = require('craco-less');
+
+        module.exports = {
+            plugins: [
+                {
+                    plugin: CracoLessPlugin,
+                    options: {
+                        lessLoaderOptions: {
+                            lessOptions: {
+                                modifyVars: { '@primary-color': '#096' },
+                                javascriptEnabled: true,
+                            },
+                        },
+                    },
+                },
+            ],
+        };
+    ```
